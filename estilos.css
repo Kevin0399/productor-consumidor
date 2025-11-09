@@ -82,6 +82,7 @@ h1 {
     border-radius: 5px;
     padding: 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
@@ -92,9 +93,17 @@ h1 {
 }
 
 .imagenEquipo {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 80%;
     object-fit: contain;
+}
+
+.indice {
+    display: flex;
+    align-items: right;
+    color: black;
+    height: 10%;
+    width: 90%;
 }
 
 /* Estilos para los controles */

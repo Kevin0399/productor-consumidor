@@ -314,7 +314,7 @@ const render = () => {
     // Actualizar turno
     document.getElementById('turno').innerHTML = `Turno de ${turno === 1 ? 'Productor' : 'Consumidor'} <br> <br>
                                                   En Buffer: ${Productor.produciendo ? 'Productor' :
-                                                               Consumidor.consumiendo ? 'Consumidor' : 'Libre'}`;
+            Consumidor.consumiendo ? 'Consumidor' : 'Libre'}`;
 
     // Actualizar tamaño del buffer
     document.getElementById('tamBuffer').innerText = `Tamaño Buffer: ${Buffer.tamanio} / ${MAX}`;
@@ -322,20 +322,32 @@ const render = () => {
     // Actualizar visualización del buffer
     const contenedor = document.getElementById('contenedorBuffer');
     contenedor.innerHTML = '';
-    Buffer.contenedor.forEach(nodo => {
+    Buffer.contenedor.forEach((nodo, index) => {
         const div = document.createElement('div');
         div.classList.add('casilla');
         const img = document.createElement('img');
         img.src = nodo.equipo ? nodo.equipo.imgRuta : 'imagenes/vacioBlanco.png';
         img.alt = nodo.equipo ? nodo.equipo.titulo : 'Espacio vacío';
         img.classList.add('imagenEquipo');
+        const indiceCasilla = document.createElement('div');
+        indiceCasilla.innerText = index + 1;
+        indiceCasilla.classList.add('indice');
+
         div.appendChild(img);
+        div.appendChild(indiceCasilla);
         contenedor.appendChild(div);
     });
 }
 
 // Pausar - Despausar
 document.addEventListener("keydown", (e) => {
+
+    // Aceptar Escape en cualquier caso (reinicia)
+    if (e.key === "Escape" || e.key === "esc" || e.code === "Escape") {
+        location.reload();
+        return;
+    }
+    
     const tecla = e.key.toUpperCase();
 
     // Si estamos en pausa, solo permitir C para continuar
@@ -345,9 +357,6 @@ document.addEventListener("keydown", (e) => {
         pausado = true; // Pausar simulacion
     } else if (tecla === "C") {
         pausado = false; // Continuar simulacion
-    }
-    else if (tecla === "ESCAPE") {
-        location.reload();
     }
 });
 

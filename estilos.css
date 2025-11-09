@@ -1,0 +1,159 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.contenedorPrincipal {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos para la sección de información */
+.info {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.reloj {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+}
+
+.contenedorEstados {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.cuadroTexto {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    min-width: 200px;
+}
+
+#estadoProductor, #estadoConsumidor {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#mensajeProd, #mensajeCons {
+    color: #666;
+    min-height: 20px;
+}
+
+/* Estilos para el buffer */
+.contenedorBuffer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.casilla {
+    aspect-ratio: 1;
+    background-color: #f8f8f8;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.casilla:hover {
+    transform: scale(1.05);
+}
+
+.imagenEquipo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Estilos para los controles */
+.btnStart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 0;
+}
+
+.btnStart:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para los estados dormidos */
+#dormidoProd, #dormidoCons {
+    background-color: #ffebee;
+    color: #d32f2f;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Estilo para el último movimiento */
+.ultimo-movimiento {
+    background-color: #e3f2fd !important;
+    border: 2px solid #2196F3 !important;
+}
+
+/* Estilo para el indicador de turno */
+#turno {
+    font-size: 1.1em;
+    color: #1976D2;
+    margin: 15px 0;
+}
+
+/* Estilo para el tamaño del buffer */
+#tamBuffer {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .contenedorBuffer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contenedorEstados {
+        flex-direction: column;
+    }
+
+    .cuadroTexto {
+        width: 90%;
+        margin: 10px auto;
+    }
+}

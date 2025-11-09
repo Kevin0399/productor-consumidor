@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación Productor - Consumidor</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="contenedorPrincipal">
+        <h1>Simulación Productor - Consumidor</h1>
+
+        <!-- Información de estado -->
+        <div class="info" id="info" style="display: none;">
+            <div id="reloj" class="reloj">Reloj Global: 0</div>
+            <div class="contenedorEstados">
+                <div id="dormidoProd" class="reloj" style="visibility: hidden;">Tiempo Dormido: 0</div>
+
+                <div id="productor" class="cuadroTexto">
+                    <div id="estadoProductor">Productor</div>
+                    <div id="mensajeProd"></div>
+                </div>
+
+                <div id="consumidor" class="cuadroTexto">
+                    <div id="estadoConsumidor">Consumidor: Activo</div>
+                    <div id="mensajeCons"></div>
+
+                </div>
+                <div id="dormidoCons" class="reloj" style="visibility: hidden;">Tiempo Dormido: 0</div>
+            </div>
+            <div id="turno" class="cuadroTexto"></div>
+            <div id="tamBuffer" class="reloj">Tamaño Buffer: 0 / 18</div>
+        </div>
+
+        <!-- Contenedor Buffer -->
+        <div class="contenedorBuffer" id="contenedorBuffer"></div>
+
+        <button id="btnStart" class="btnStart">Iniciar Simulación</button>
+
+        <p><b>Teclas:</b> P = Pausar | C = Continuar | ESC = Reiniciar</p>
+    </div>
+
+    <script src="productor-consumidor.js"></script>
+</body>
+
+</html>
